@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Pengelasan - Mahad Al-Zaytun</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="format_css/teknik_besi.css">
+</head>
+<body>
+
+    
+    <?php include "service/navbar.php"; ?>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag"><i class="fas fa-fire"></i> Ekstrakurikuler Vokasi</span>
+            <h1>Seni Menyatu Logam<br><span>Membentuk Karakter Baja</span></h1>
+            <p>Program pengelasan Mahad Al-Zaytun memadukan keterampilan teknis SMAW/MIG, keselamatan kerja industri, dan ketelitian tinggi untuk menciptakan generasi teknisi profesional.</p>
+            <div class="btn-group">
+                <a href="#materi" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Pelajari Materi</a>
+                <a href="#galeri" class="btn btn-outline"><i class="fas fa-images"></i> Lihat Dokumentasi</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MATERI SECTION -->
+    <section id="materi">
+        <div class="container">
+            <div class="section-title">
+                <small><i class="fas fa-book-open"></i> Kurikulum Praktis</small>
+                <h2>Materi Pengelasan</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img"><i class="fas fa-hard-hat"></i></div>
+                    <span class="card-tag">Fundamental</span>
+                    <h3>K3 & Keselamatan</h3>
+                    <p>Memahami APD lengkap, bahaya radiasi UV/IR, ventilasi asap las, dan prosedur darurat industri.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img"><i class="fas fa-fire"></i></div>
+                    <span class="card-tag">Dasar</span>
+                    <h3>Las SMAW Manual</h3>
+                    <p>Teknik pengelasan busur listrik dengan elektroda perlapisan untuk fabrikasi dan perbaikan struktur.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-img"><i class="fas fa-wind"></i></div>
+                    <span class="card-tag">Lanjutan</span>
+                    <h3>Pengelasan MIG/MAG</h3>
+                    <p>Teknik las gas dengan kawat otomatis menghasilkan sambungan lebih rapi dan penetrasi kuat.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img"><i class="fas fa-ruler-combined"></i></div>
+                    <span class="card-tag">Aplikasi</span>
+                    <h3>Fabrikasi & Proyek</h3>
+                    <p>Membaca gambar teknik, mengukur presisi, dan mewujudkan karya nyata dengan standar industri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-title">
+                <small><i class="fas fa-tasks"></i> Alur Praktik</small>
+                <h2>Proses Pengelasan</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="step"><i class="fas fa-check-circle"></i> Langkah 1</span>
+                        <h4>Persiapan Material</h4>
+                        <p>Pemotongan besi, pembersihan karat, dan penataan posisi dengan presisi tinggi.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="step"><i class="fas fa-check-circle"></i> Langkah 2</span>
+                        <h4>Tack Welding</h4>
+                        <p>Pengelasan titik sementara untuk mengunci posisi dan mencegah pergeseran.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="step"><i class="fas fa-check-circle"></i> Langkah 3</span>
+                        <h4>Pengelasan Penuh</h4>
+                        <p>Proses las utama dengan arus tepat, jarak busur konsisten, dan kecepatan stabil.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="step"><i class="fas fa-check-circle"></i> Langkah 4</span>
+                        <h4>Finishing & QA</h4>
+                        <p>Pembersihan terak, penggerindaan halus, dan pemeriksaan kualitas las secara visual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="galeri">
+        <div class="container">
+            <div class="section-title">
+                <small><i class="fas fa-camera"></i> Dokumentasi</small>
+                <h2>Galeri Pembelajaran</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-welding-torch"></i>
+                    <div class="gallery-caption">Praktik SMAW</div>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-toolbox"></i>
+                    <div class="gallery-caption">Persiapan Material</div>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-tools"></i>
+                    <div class="gallery-caption">Finishing Karya</div>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="gallery-caption">Proyek Fabrikasi</div>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-hard-hat"></i>
+                    <div class="gallery-caption">Keselamatan Kerja</div>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-certificate"></i>
+                    <div class="gallery-caption">Sertifikasi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="container" style="padding: 0 16px;">
+        <div class="cta">
+            <h2>Siap Menjadi Teknisi Profesional?</h2>
+            <p>Bergabung dengan program ekstrakurikuler Teknik Pengelasan dan kuasai keterampilan yang diakui industri manufaktur nasional.</p>
+            <a href="#kontak" class="btn btn-primary"><i class="fas fa-envelope"></i> Hubungi Kami</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo"><i class="fas fa-fire"></i> Teknik Besi</div>
+                    <p>Mencetak generasi teknisi pengelasan yang kompeten, disiplin, dan berakhlak mulia dengan standar internasional.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu Cepat</h4>
+                    <a href="beranda.php"><i class="fas fa-home"></i> Beranda</a>
+                    <a href="#materi"><i class="fas fa-book"></i> Materi</a>
+                    <a href="#galeri"><i class="fas fa-images"></i> Galeri</a>
+                    <a href="samudra_biru.php"><i class="fas fa-water"></i> Samudra Biru</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Program Kami</h4>
+                    <a href="#"><i class="fas fa-fire"></i> Las SMAW</a>
+                    <a href="#"><i class="fas fa-wind"></i> Las MIG/MAG</a>
+                    <a href="#"><i class="fas fa-tools"></i> Fabrikasi Baja</a>
+                    <a href="#"><i class="fas fa-shield-alt"></i> K3 Industri</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hubungi Kami</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Mahad Al-Zaytun, Indramayu</p>
+                    <p><i class="fas fa-phone"></i> (0234) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> teknik@mahad.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Teknik Pengelasan Mahad Al-Zaytun. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
