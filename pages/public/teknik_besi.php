@@ -168,39 +168,9 @@ if (!defined('APP_ROOT')) {
     </section>
 
     <!-- FOOTER -->
-    <footer id="kontak">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo"><i class="fas fa-fire"></i> Teknik Besi</div>
-                    <p>Mencetak generasi teknisi pengelasan yang kompeten, disiplin, dan berakhlak mulia dengan standar internasional.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Menu Cepat</h4>
-                    <a href="index.php?route=beranda"><i class="fas fa-home"></i> Beranda</a>
-                    <a href="#materi"><i class="fas fa-book"></i> Materi</a>
-                    <a href="#galeri"><i class="fas fa-images"></i> Galeri</a>
-                    <a href="index.php?route=samudra_biru"><i class="fas fa-water"></i> Samudra Biru</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Program Kami</h4>
-                    <a href="#"><i class="fas fa-fire"></i> Las SMAW</a>
-                    <a href="#"><i class="fas fa-wind"></i> Las MIG/MAG</a>
-                    <a href="#"><i class="fas fa-tools"></i> Fabrikasi Baja</a>
-                    <a href="#"><i class="fas fa-shield-alt"></i> K3 Industri</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Hubungi Kami</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Mahad Al-Zaytun, Indramayu</p>
-                    <p><i class="fas fa-phone"></i> (0234) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> teknik@mahad.id</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Teknik Pengelasan Mahad Al-Zaytun. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php require APP_ROOT . '/layout/footer.html'; ?>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+   <script src="format_js/navbar.js"></script>
 
 </body>
 </html>

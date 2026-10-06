@@ -179,40 +179,13 @@ if (!defined('APP_ROOT')) {
           </div>
         </div>
       </section>
-
-
-      <footer class="footer">
-        <div class="container footer-grid">
-          <div class="footer-brand">
-            <span class="brand-icon"><i class="fas fa-anchor"></i></span>
-            <h3>SMK Perkapalan Al-Zaytun</h3>
-            <p class="footer-desc">Mencetak generasi maritim unggul, berakhlak, dan siap bersaing di tingkat nasional maupun internasional.</p>
-          </div>
-          <div class="footer-links">
-            <h4>Menu Utama</h4>
-            <ul>
-              <li><a href="#" onclick="showPage('beranda')">Beranda</a></li>
-              <li><a href="#profil-section" onclick="scrollToSection('profil-section')">Profil</a></li>
-              <li><a href="#fasilitas-section" onclick="scrollToSection('fasilitas-section')">Fasilitas</a></li>
-              <li><a href="index.php?route=halaman_login">Laporan Praktikum</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h4>Kontak</h4>
-            <ul>
-              <li><i data-lucide="map-pin" class="contact-icon"></i> Jl. Pendidikan No. 123, Indonesia</li>
-              <li><i data-lucide="phone" class="contact-icon"></i> (021) 1234-5678</li>
-              <li><i data-lucide="mail" class="contact-icon"></i> info@smkperkapalan.sch.id</li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>2026 SMK Perkapalan Al-Zaytun. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   </main>
 
+  <?php require APP_ROOT . '/layout/footer.html'; ?>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+   <script src="format_js/navbar.js"></script>
   <script src="format_js/script.js"></script>
+  
 </body>
 </html>

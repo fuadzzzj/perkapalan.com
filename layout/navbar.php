@@ -25,8 +25,6 @@ $themes = [
         'color' => '#f1c40f'          // Kuning Emas
     ]
 ];
-
-// 3. Ambil data tema berdasarkan halaman, jika tidak ada gunakan default (beranda)
 $theme = $themes[$current_page] ?? $themes['beranda'];
 ?>
 

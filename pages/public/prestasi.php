@@ -108,31 +108,9 @@ if (!defined('APP_ROOT')) {
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-inner">
-            <div>
-                <h3>Perkapalan</h3>
-                <p>Mewujudkan semangat belajar, kerja keras, dan prestasi dalam dunia maritim.</p>
-            </div>
-            <div>
-                <h4>Navigasi</h4>
-                <ul>
-                    <li><a href="index.php?route=beranda">Beranda</a></li>
-                    <li><a href="#prestasi">Prestasi</a></li>
-                    <li><a href="index.php?route=workshop_perkapalan">Workshop</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Kontak</h4>
-                <ul>
-                    <li>Jl. Perkapalan No. 12</li>
-                    <li>info@perkapalan.sch.id</li>
-                    <li>+62 812-3456-7890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="container footer-bottom">© 2026 Perkapalan. Semua hak dilindungi.</div>
-    </footer>
+    <?php require APP_ROOT . '/layout/footer.html'; ?>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+   <script src="format_js/navbar.js"></script>
 
     <script src="format_js/prestasi.js"></script>
 </body>
