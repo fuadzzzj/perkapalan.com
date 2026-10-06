@@ -23,7 +23,7 @@ if (!defined('APP_ROOT')) {
     <div class="container navbar-container">
       <div class="navbar-brand">
         <span class="brand-icon">
-          <img src="images/logo jae.png" alt="Logo SMK Perkapalan Al-Zaytun" width="50" height="50">
+          <img src="images/beranda/logo jae.png" alt="Logo SMK Perkapalan Al-Zaytun" width="50" height="50">
         </span>
         <h1 class="brand-title">MAK Perkapalan Al-Zaytun</h1>
       </div>
@@ -50,7 +50,7 @@ if (!defined('APP_ROOT')) {
   <main id="main-content">
     <div id="page-beranda" class="page active">
       <header class="hero">
-        <img class="hero-image" src="images/samudra biru.png" alt="Foto Kapal Perkapalan" loading="eager">
+        <img class="hero-image" src="images/samudra_biru/samudra biru.png" alt="Foto Kapal Perkapalan" loading="eager">
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h2 class="hero-title">Membangun Generasi Maritim Unggul</h2>
@@ -88,7 +88,7 @@ if (!defined('APP_ROOT')) {
             </div>
           </div>
           <div class="profil-image-wrapper fade-in delay-200">
-            <img src="images/ustad imam.jpeg" alt="Fasilitas SMK Perkapalan">
+            <img src="images/prestasi/ustad imam.jpeg" alt="Fasilitas SMK Perkapalan">
             <div class="image-badge">
               <i data-lucide="award" class="badge-icon"></i>
               <span>Akreditasi A</span>
@@ -107,7 +107,7 @@ if (!defined('APP_ROOT')) {
           <div class="grid-3">
             <button type="button" class="card card-fasilitas fade-in" onclick="window.location.href='index.php?route=workshop_perkapalan'">
               <div class="card-image">
-                <img src="images/workshop.jpg" alt="Workshop Perkapalan">
+                <img src="images/workshop/workshop.jpg" alt="Workshop Perkapalan">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
@@ -119,7 +119,7 @@ if (!defined('APP_ROOT')) {
 
             <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=teknik_besi'">
               <div class="card-image">
-                <img src="images/download (2).jpg" alt="Teknik Besi dan Pengelasan">
+                <img src="images/teknik_besi/las.jpg" alt="Teknik Besi dan Pengelasan">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
@@ -131,7 +131,7 @@ if (!defined('APP_ROOT')) {
 
             <button type="button" class="card card-fasilitas fade-in delay-200" onclick="window.location.href='index.php?route=samudra_biru'">
               <div class="card-image">
-                <img src="images/samudra biru.png" alt="Program Samudra Biru">
+                <img src="images/samudra_biru/3.png" alt="Program Samudra Biru">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
@@ -143,7 +143,7 @@ if (!defined('APP_ROOT')) {
 
             <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=tenaga_ahli_guru_perkapalan'">
               <div class="card-image">
-                <img src="images/syaykh.png" alt="Guru dan Tenaga Ahli Perkapalan">
+                <img src="images/tenaga ahli/fuad.jpg" alt="Guru dan Tenaga Ahli Perkapalan">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
@@ -155,7 +155,7 @@ if (!defined('APP_ROOT')) {
 
             <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=prestasi'">
               <div class="card-image">
-                <img src="images/ustad imam.jpeg" alt="Prestasi Perkapalan">
+                <img src="images/prestasi/prestasi 2.jpg" alt="Prestasi Perkapalan">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
@@ -167,7 +167,7 @@ if (!defined('APP_ROOT')) {
 
             <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=beranda'">
               <div class="card-image">
-                <img src="images/download (2).jpg" alt="Program Unggulan Perkapalan">
+                <img src="images/program_unggulan/bahtera 1.jpg" alt="Program Unggulan Perkapalan">
                 <div class="card-overlay"></div>
               </div>
               <div class="card-content">
