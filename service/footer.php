@@ -1,4 +1,12 @@
-<!-- FOOTER -->
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
+
+<link rel="stylesheet" href="format_css/footer.css">
+
 <footer id="kontak">
   <div class="footer-grid">
     <div class="footer-col">
@@ -30,7 +38,6 @@
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 Workshop Kapal Ponpes Al-Zaytun. Dibuat dengan ❤️ untuk santri Nusantara.
+    © <?php echo date('Y'); ?> Workshop Kapal Ponpes Al-Zaytun. Dibuat dengan ❤️ untuk santri Nusantara.
   </div>
 </footer>
-<script src="format_js/workshop_perkapalan.js"></script>
