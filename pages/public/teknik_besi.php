@@ -28,7 +28,7 @@ if (!defined('APP_ROOT')) {
             <h1>Seni Menyatu Logam<br><span>Membentuk Karakter Baja</span></h1>
             <p>Program pengelasan Mahad Al-Zaytun memadukan keterampilan teknis SMAW/MIG, keselamatan kerja industri, dan ketelitian tinggi untuk menciptakan generasi teknisi profesional.</p>
             <div class="btn-group">
-                <a href="#materi" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Pelajari Materi</a>
+            <a href="#materi" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Pelajari Materi</a>
                 <a href="#galeri" class="btn btn-outline"><i class="fas fa-images"></i> Lihat Dokumentasi</a>
             </div>
         </div>

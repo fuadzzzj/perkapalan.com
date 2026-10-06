@@ -57,73 +57,16 @@ p {
     position: sticky;
     top: 0;
     z-index: 20;
-    background-image: url('../images/download.png');
+    background-image: url('/images/samudra_biru/3.png');
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--white);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 0.96rem;
-}
-
-.brand-mark {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), #f0c66d);
-    display: grid;
-    place-items: center;
-    color: var(--navy);
-    font-weight: 800;
-    box-shadow: 0 8px 20px rgba(217, 164, 65, 0.4);
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.nav-menu a {
-    color: rgba(255,255,255,0.82);
-    font-size: 0.92rem;
-    font-weight: 500;
-    transition: 0.25s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--gold);
-}
-
-.nav-btn {
-    padding: 12px 22px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--gold), #f2c567);
-    color: var(--navy);
-    font-weight: 700;
-    box-shadow: 0 10px 22px rgba(217, 164, 65, 0.34);
 }
 
 .hero {
     min-height: 100vh;
   background:
     linear-gradient(135deg, rgba(10,37,64,0.85), rgba(30,95,140,0.75)),
-    url('../images/samudra biru.png') center/cover no-repeat;
+    url('/images/samudra_biru/3.png') center/cover no-repeat;
   display: flex; align-items: center;
   padding: 0 8%;
   color: var(--white);
