@@ -185,7 +185,7 @@ p {
     margin: 0 auto;
 }
 
-/* ========== HERO SECTION ========== */
+/* HERO SECTION */
 .hero {
    min-height: 100vh;
   background:
@@ -335,7 +335,7 @@ p {
     border-color: white;
 }
 
-/* ========== SECTION TITLE ========== */
+/*  SECTION TITLE  */
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -363,7 +363,7 @@ p {
     border-radius: 2px;
 }
 
-/* ========== MATERI SECTION ========== */
+/*  MATERI SECTION  */
 #materi {
     padding: 100px 0;
     background: var(--bg-light);
@@ -451,7 +451,7 @@ p {
     font-size: 0.95rem;
 }
 
-/* ========== TIMELINE SECTION ========== */
+/* TIMELINE SECTION*/
 .timeline-section {
     padding: 100px 0;
     background: var(--white);
@@ -523,7 +523,7 @@ p {
     margin: 0;
 }
 
-/* ========== STATS SECTION ========== */
+/*  STATS SECTION  */
 .stats {
     background: linear-gradient(135deg, var(--navy), var(--ocean));
     border-radius: 20px;
@@ -556,7 +556,7 @@ p {
     letter-spacing: 0.05em;
 }
 
-/* ========== GALLERY SECTION ========== */
+/* GALLERY SECTION  */
 #galeri {
     padding: 100px 0;
     background: var(--bg-light);
@@ -628,7 +628,7 @@ p {
     transform: translateY(0);
 }
 
-/* ========== CTA SECTION ========== */
+/* CTA SECTION  */
 .cta {
     background: linear-gradient(135deg, var(--navy), var(--ocean));
     color: white;
@@ -652,7 +652,7 @@ p {
     margin: 0 auto 32px;
 }
 
-/* ========== FOOTER ========== */
+/* footer */
 footer {
     background: linear-gradient(180deg, var(--navy), #0a1622);
     color: rgba(255, 255, 255, 0.8);
