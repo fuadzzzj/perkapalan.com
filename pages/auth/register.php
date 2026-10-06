@@ -1,9 +1,14 @@
 <?php
-require __DIR__ . '/service/database.php';
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+
+require APP_ROOT . '/service/database.php';
 session_start();
 
 if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === true) {
-    header('Location: dashboard.php');
+    header('Location: index.php?route=dashboard');
     exit;
 }
 
@@ -76,8 +81,8 @@ if (isset($_POST['register'])) {
 
     <div class="card">
         <div class="rapihin">
-        <button class="tombol-beranda" type="submit" onclick="window.location.href='beranda.php'">Beranda</button>
-        <button class="tombol-beranda" type="submit" onclick="window.location.href='halaman_login.php'">Login</button>
+        <button class="tombol-beranda" type="submit" onclick="window.location.href='index.php?route=beranda'">Beranda</button>
+        <button class="tombol-beranda" type="submit" onclick="window.location.href='index.php?route=halaman_login'">Login</button>
         </div>
       <div class="brand-row">
         <div class="ship-wrap">
@@ -105,7 +110,7 @@ if (isset($_POST['register'])) {
         <p style="margin: 0 0 12px; color: #ff6b6b; font-weight: 600;"><?php echo htmlspecialchars($register_message, ENT_QUOTES, 'UTF-8'); ?></p>
       <?php endif; ?>
 
-      <form action="register.php" method="POST">
+      <form action="index.php?route=register" method="POST">
         <div class="field-group">
           <label class="field-label" for="nama_lengkap">Nama Lengkap</label>
           <div class="field-wrap"><input class="field-input" id="nama_lengkap" type="text" placeholder="Nama lengkap anggota" name="nama_lengkap" required></div>

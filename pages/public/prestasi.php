@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +18,7 @@
     <link rel="stylesheet" href="format_css/prestasi.css">
 </head>
 <body>
-    <?php include "service/navbar.php"; ?>
+    <?php include APP_ROOT . '/service/navbar.php'; ?>
 
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -111,9 +117,9 @@
             <div>
                 <h4>Navigasi</h4>
                 <ul>
-                    <li><a href="beranda.php">Beranda</a></li>
+                    <li><a href="index.php?route=beranda">Beranda</a></li>
                     <li><a href="#prestasi">Prestasi</a></li>
-                    <li><a href="workshop_perkapalan.php">Workshop</a></li>
+                    <li><a href="index.php?route=workshop_perkapalan">Workshop</a></li>
                 </ul>
             </div>
             <div>

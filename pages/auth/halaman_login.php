@@ -1,9 +1,14 @@
 <?php
-require __DIR__ . '/service/database.php';
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+
+require APP_ROOT . '/service/database.php';
 session_start();
 
 if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === true) {
-    header('Location: dashboard.php');
+    header('Location: index.php?route=dashboard');
     exit;
 }
 
@@ -43,7 +48,7 @@ if (isset($_POST['login'])) {
               $_SESSION['jurusan'] = $data['jurusan'];
               $_SESSION['tahun_masuk'] = $data['tahun_masuk'];
                 $_SESSION['is_login'] = true;
-                header('Location: ' . ($data['role'] === 'guru' ? 'admin.php' : 'dashboard.php'));
+                header('Location: ' . ($data['role'] === 'guru' ? 'index.php?route=admin' : 'index.php?route=dashboard'));
                 exit;
             }
         }
@@ -88,7 +93,7 @@ if (isset($_POST['login'])) {
     </svg>
 
     <div class="card">
-        <button class="tombol-beranda" type="submit" onclick="window.location.href='beranda.php'">Beranda</button>
+        <button class="tombol-beranda" type="submit" onclick="window.location.href='index.php?route=beranda'">Beranda</button>
       <div class="brand-row">
         <div class="ship-wrap">
           <svg width="110" height="68" viewBox="0 0 110 68" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +120,7 @@ if (isset($_POST['login'])) {
         <p style="margin: 0 0 12px; color: #ff6b6b; font-weight: 600;"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
       <?php endif; ?>
 
-      <form action="halaman_login.php" method="POST">
+      <form action="index.php?route=halaman_login" method="POST">
         <div class="field-group">
           <label class="field-label" for="username">Nama Pengguna</label>
           <div class="field-wrap">
@@ -139,7 +144,7 @@ if (isset($_POST['login'])) {
         </div>
 
         <div class="forgot">
-          <a href="register.php">Daftar sekarang</a>
+          <a href="index.php?route=register">Daftar sekarang</a>
         </div>
 
         <button class="btn-login" type="submit" name="login">

@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +18,7 @@
 <body>
 
     
-    <?php include "service/navbar.php"; ?>
+    <?php include APP_ROOT . '/service/navbar.php'; ?>
 
     <!-- HERO SECTION -->
     <header class="hero">
@@ -171,10 +177,10 @@
                 </div>
                 <div class="footer-col">
                     <h4>Menu Cepat</h4>
-                    <a href="beranda.php"><i class="fas fa-home"></i> Beranda</a>
+                    <a href="index.php?route=beranda"><i class="fas fa-home"></i> Beranda</a>
                     <a href="#materi"><i class="fas fa-book"></i> Materi</a>
                     <a href="#galeri"><i class="fas fa-images"></i> Galeri</a>
-                    <a href="samudra_biru.php"><i class="fas fa-water"></i> Samudra Biru</a>
+                    <a href="index.php?route=samudra_biru"><i class="fas fa-water"></i> Samudra Biru</a>
                 </div>
                 <div class="footer-col">
                     <h4>Program Kami</h4>

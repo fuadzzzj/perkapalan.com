@@ -1,16 +1,21 @@
 <?php
-require __DIR__ . '/service/database.php';
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+
+require APP_ROOT . '/service/database.php';
 session_start();
 
 if (!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {
-    header('Location: halaman_login.php');
+    header('Location: index.php?route=halaman_login');
     exit;
 }
 
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
-    header('Location: halaman_login.php');
+    header('Location: index.php?route=halaman_login');
     exit;
 }
 
@@ -24,7 +29,7 @@ $stmt->close();
 if (!$member) {
   session_unset();
   session_destroy();
-  header('Location: halaman_login.php');
+  header('Location: index.php?route=halaman_login');
   exit;
 }
 
@@ -79,43 +84,43 @@ $escape = static fn ($value) => htmlspecialchars((string) $value, ENT_QUOTES, 'U
 
     <div class="sidebar-nav">
       <span class="nav-section-label">Utama</span>
-      <a class="nav-item active" href="dashboard.php">
+      <a class="nav-item active" href="index.php?route=dashboard">
         <i data-lucide="grid" style="width:16px;height:16px;"></i>
         Dashboard
       </a>
-      <a class="nav-item" href="portal_pelajar.php?page=profil">
+      <a class="nav-item" href="index.php?route=portal_pelajar&amp;page=profil">
         <i data-lucide="file-text" style="width:16px;height:16px;"></i>
         Praktikum Saya
       </a>
-      <a class="nav-item" href="portal_pelajar.php?page=upload">
+      <a class="nav-item" href="index.php?route=portal_pelajar&amp;page=upload">
         <i data-lucide="upload" style="width:16px;height:16px;"></i>
         Upload Laporan
       </a>
-      <a class="nav-item" href="portal_utama.php">
+      <a class="nav-item" href="index.php?route=portal_utama">
         <i data-lucide="calendar" style="width:16px;height:16px;"></i>
         Jadwal Praktikum
       </a>
 
       <span class="nav-section-label" style="margin-top:20px;">Akademik</span>
-      <a class="nav-item" href="portal_pelajar.php?page=nilai">
+      <a class="nav-item" href="index.php?route=portal_pelajar&amp;page=nilai">
         <i data-lucide="bar-chart-2" style="width:16px;height:16px;"></i>
         Nilai Praktikum
       </a>
-      <a class="nav-item" href="portal_utama.php">
+      <a class="nav-item" href="index.php?route=portal_utama">
         <i data-lucide="anchor" style="width:16px;height:16px;"></i>
         Progress Kapal
       </a>
 
       <span class="nav-section-label" style="margin-top:20px;">Lainnya</span>
-      <a class="nav-item" href="portal_pelajar.php?page=jadwal">
+      <a class="nav-item" href="index.php?route=portal_pelajar&amp;page=jadwal">
         <i data-lucide="bell" style="width:16px;height:16px;"></i>
         Jadwal & Pengumuman
       </a>
-      <a class="nav-item" href="portal_pelajar.php?page=profil">
+      <a class="nav-item" href="index.php?route=portal_pelajar&amp;page=profil">
         <i data-lucide="user" style="width:16px;height:16px;"></i>
         Profil Saya
       </a>
-      <a class="nav-item" href="chat.php">
+      <a class="nav-item" href="index.php?route=chat">
         <i data-lucide="messages-square" style="width:16px;height:16px;"></i>
         Ruang Chat
       </a>
@@ -266,7 +271,7 @@ $escape = static fn ($value) => htmlspecialchars((string) $value, ENT_QUOTES, 'U
       if (confirm('Apakah Anda yakin ingin keluar?')) {
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = 'dashboard.php';
+        form.action = 'index.php?route=dashboard';
 
         const input = document.createElement('input');
         input.type = 'hidden';

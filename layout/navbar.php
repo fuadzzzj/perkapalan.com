@@ -1,6 +1,6 @@
 <?php
-// 1. Deteksi nama file halaman yang sedang dibuka (tanpa .php)
-$current_page = basename($_SERVER['PHP_SELF'], '.php');
+// Route utama berasal dari dispatcher index.php.
+$current_page = isset($_GET['route']) && is_string($_GET['route']) ? $_GET['route'] : 'beranda';
 
 // 2. Konfigurasi Tema untuk setiap halaman
 $themes = [

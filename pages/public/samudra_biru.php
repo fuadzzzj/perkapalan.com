@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,7 +17,7 @@
     <link rel="stylesheet" href="format_css/samudra_biru.css">
 </head>
 <body>
-    <?php include "service/navbar.php"; ?>
+    <?php include APP_ROOT . '/service/navbar.php'; ?>
 
     <section class="hero" id="beranda">
         <div class="hero-content">
@@ -265,13 +271,13 @@
                         Samudra Biru menghadirkan pengalaman belajar yang inspiratif dan aplikatif agar siswa siap berkontribusi di dunia kelautan,
                         industri maritim, dan lingkungan kerja yang menuntut profesionalisme tinggi.
                     </p>
-                    <a class="btn btn-primary" href="halaman_login.php">Daftar Sekarang</a>
+                    <a class="btn btn-primary" href="index.php?route=halaman_login">Daftar Sekarang</a>
                 </div>
             </div>
         </section>
     </main>
 
-   <?php require __DIR__ . '/layout/footer.html'; ?>
+   <?php require APP_ROOT . '/layout/footer.html'; ?>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
    <script src="format_js/navbar.js"></script>
 

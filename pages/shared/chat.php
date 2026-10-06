@@ -1,7 +1,12 @@
 <?php
-require __DIR__ . '/service/database.php';
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+
+require APP_ROOT . '/service/database.php';
 session_start();
-if (empty($_SESSION['is_login'])) { header('Location: halaman_login.php'); exit; }
+if (empty($_SESSION['is_login'])) { header('Location: index.php?route=halaman_login'); exit; }
 $userId = (int) $_SESSION['user_id'];
 $name = $_SESSION['nama_lengkap'] ?? $_SESSION['username'];
 $escape = static fn ($value) => htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
@@ -10,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($media && $media['error'] === UPLOAD_ERR_OK && $media['size'] > 0) {
         $types = ['image/jpeg'=>'image','image/png'=>'image','image/webp'=>'image','video/mp4'=>'video','video/webm'=>'video','audio/mpeg'=>'audio','audio/ogg'=>'audio','audio/webm'=>'audio','audio/wav'=>'audio'];
         $detected = (new finfo(FILEINFO_MIME_TYPE))->file($media['tmp_name']); $limits = ['image'=>8*1024*1024,'video'=>30*1024*1024,'audio'=>15*1024*1024];
-        if (isset($types[$detected]) && $media['size'] <= $limits[$types[$detected]]) { $mediaType=$types[$detected]; $folder=__DIR__.'/uploads/chat'; if(!is_dir($folder)) mkdir($folder,0755,true); $ext=strtolower(pathinfo($media['name'],PATHINFO_EXTENSION)); $stored=bin2hex(random_bytes(12)).'.'.$ext; if(move_uploaded_file($media['tmp_name'],$folder.'/'.$stored)) $mediaPath='uploads/chat/'.$stored; }
+        if (isset($types[$detected]) && $media['size'] <= $limits[$types[$detected]]) { $mediaType=$types[$detected]; $folder=APP_ROOT.'/uploads/chat'; if(!is_dir($folder)) mkdir($folder,0755,true); $ext=strtolower(pathinfo($media['name'],PATHINFO_EXTENSION)); $stored=bin2hex(random_bytes(12)).'.'.$ext; if(move_uploaded_file($media['tmp_name'],$folder.'/'.$stored)) $mediaPath='uploads/chat/'.$stored; }
     }
     if ($message !== '' || $mediaPath) { $stmt=$db->prepare('INSERT INTO chat (user_id,pesan,media_path,media_type) VALUES (?,?,?,?)'); $stmt->bind_param('isss',$userId,$message,$mediaPath,$mediaType); $stmt->execute(); $stmt->close(); }
-    header('Location: chat.php'); exit;
+    header('Location: index.php?route=chat'); exit;
 }
 $messages=$db->query('SELECT c.pesan,c.media_path,c.media_type,c.created_at,u.nama_lengkap,u.role FROM chat c JOIN user u ON u.id=c.user_id ORDER BY c.created_at ASC LIMIT 100');
 ?><!doctype html>
@@ -24,7 +29,7 @@ $messages=$db->query('SELECT c.pesan,c.media_path,c.media_type,c.created_at,u.na
     <link rel="stylesheet" href="format_css/chat_modern.css"></head>
     <body>
         <main class="chat-shell">
-            <header><div class="chat-brand"><a class="back-link" href="<?php echo ($_SESSION['role']??'siswa')==='guru'?'admin.php':'dashboard.php'; ?>">‹</a><div class="group-avatar">⚓</div><div><h1>Ruang Chat Bersama</h1><p>Pelajar dan guru</p></div></div><span class="header-dots">•••</span></header>
+            <header><div class="chat-brand"><a class="back-link" href="<?php echo ($_SESSION['role']??'siswa')==='guru'?'index.php?route=admin':'index.php?route=dashboard'; ?>">‹</a><div class="group-avatar">⚓</div><div><h1>Ruang Chat Bersama</h1><p>Pelajar dan guru</p></div></div><span class="header-dots">•••</span></header>
 <section class="messages"><?php while($row=$messages->fetch_assoc()): ?><article class="message <?php echo $row['nama_lengkap']===$name?'mine':''; ?>"><div class="message-meta"><b><?php echo $escape($row['nama_lengkap']); ?></b><span><?php echo $row['role']==='guru'?'Guru':'Pelajar'; ?> · <?php echo $escape(date('d M H:i',strtotime($row['created_at']))); ?></span></div><?php if($row['pesan']!==''): ?><p><?php echo nl2br($escape($row['pesan'])); ?></p><?php endif; ?><?php if($row['media_type']==='image'): ?><img class="chat-media" src="<?php echo $escape($row['media_path']); ?>" alt="Foto kiriman"><?php elseif($row['media_type']==='video'): ?><video class="chat-media" controls src="<?php echo $escape($row['media_path']); ?>"></video><?php elseif($row['media_type']==='audio'): ?><audio controls src="<?php echo $escape($row['media_path']); ?>"></audio><?php endif; ?></article><?php endwhile; ?></section>
 <form class="composer" method="post" enctype="multipart/form-data"><button class="attach-toggle" type="button" aria-label="Buka lampiran">＋</button><div class="attach-menu"><label>▣ <span>Dokumen<input type="file" class="picker" accept=".pdf,.doc,.docx,.zip"></span></label><label>▧ <span>Foto & video<input type="file" class="picker" accept="image/*,video/*"></span></label><label>◉ <span>Kamera<input type="file" class="picker" accept="image/*" capture="environment"></span></label><label>◉ <span>Audio<input type="file" class="picker" accept="audio/*"></span></label></div><input id="media-input" type="file" name="media" hidden><input name="pesan" placeholder="Tulis pesan" maxlength="1000" autocomplete="off"><button class="live-camera" type="button">Kamera langsung</button><button class="live-voice" type="button">Rekam suara</button><button class="send-button" type="submit" aria-label="Kirim">➤</button></form></main>
 <script>

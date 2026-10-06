@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +31,8 @@
         <button id="nav-beranda" class="nav-link active" onclick="showPage('beranda')">Beranda</button>
         <button id="nav-profil" class="nav-link" onclick="scrollToSection('profil-section')">Profil</button>
         <button id="nav-fasilitas" class="nav-link" onclick="scrollToSection('fasilitas-section')">Fasilitas</button>
-        <button id="nav-laporan" class="nav-link" onclick="window.location.href='halaman_login.php'">Laporan</button>
-        <button class="nav-link login-nav-btn" onclick="window.location.href='halaman_login.php'">Login</button>
+        <button id="nav-laporan" class="nav-link" onclick="window.location.href='index.php?route=halaman_login'">Laporan</button>
+        <button class="nav-link login-nav-btn" onclick="window.location.href='index.php?route=halaman_login'">Login</button>
       </div>
       <button class="navbar-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
         <i data-lucide="menu" class="icon-menu"></i>
@@ -36,8 +42,8 @@
       <button class="mobile-link" onclick="showPage('beranda'); closeMobileMenu()">Beranda</button>
       <button class="mobile-link" onclick="scrollToSection('profil-section'); closeMobileMenu()">Profil</button>
       <button class="mobile-link" onclick="scrollToSection('fasilitas-section'); closeMobileMenu()">Fasilitas</button>
-      <button class="mobile-link" onclick="window.location.href='halaman_login.php'">Laporan</button>
-      <button class="mobile-link" onclick="window.location.href='halaman_login.php'">Login</button>
+      <button class="mobile-link" onclick="window.location.href='index.php?route=halaman_login'">Laporan</button>
+      <button class="mobile-link" onclick="window.location.href='index.php?route=halaman_login'">Login</button>
     </div>
   </nav>
 
@@ -49,7 +55,7 @@
         <div class="hero-content">
           <h2 class="hero-title">Membangun Generasi Maritim Unggul</h2>
           <p style="color: black;" class="hero-subtitle"><strong>Perkapalan Al-Zaytun</strong> berkomitmen mencetak lulusan kompeten di bidang kelautan dan perkapalan dengan standar industri nasional.</p>
-          <button class="btn btn-primary btn-lg" onclick="window.location.href='halaman_login.php'">
+          <button class="btn btn-primary btn-lg" onclick="window.location.href='index.php?route=halaman_login'">
             <i data-lucide="file-plus" class="btn-icon"></i>
             Masuk Sebagai Anggota
           </button>
@@ -99,7 +105,7 @@
             <p class="section-desc">Dilengkapi dengan sarana modern untuk mendukung pembelajaran berbasis praktik.</p>
           </div>
           <div class="grid-3">
-            <button type="button" class="card card-fasilitas fade-in" onclick="window.location.href='workshop_perkapalan.php'">
+            <button type="button" class="card card-fasilitas fade-in" onclick="window.location.href='index.php?route=workshop_perkapalan'">
               <div class="card-image">
                 <img src="images/workshop.jpg" alt="Workshop Perkapalan">
                 <div class="card-overlay"></div>
@@ -111,7 +117,7 @@
               </div>
             </button>
 
-            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='teknik_besi.php'">
+            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=teknik_besi'">
               <div class="card-image">
                 <img src="images/download (2).jpg" alt="Teknik Besi dan Pengelasan">
                 <div class="card-overlay"></div>
@@ -123,7 +129,7 @@
               </div>
             </button>
 
-            <button type="button" class="card card-fasilitas fade-in delay-200" onclick="window.location.href='samudra_biru.php'">
+            <button type="button" class="card card-fasilitas fade-in delay-200" onclick="window.location.href='index.php?route=samudra_biru'">
               <div class="card-image">
                 <img src="images/samudra biru.png" alt="Program Samudra Biru">
                 <div class="card-overlay"></div>
@@ -135,7 +141,7 @@
               </div>
             </button>
 
-            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='tenaga_ahli_guru_perkapalan.php'">
+            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=tenaga_ahli_guru_perkapalan'">
               <div class="card-image">
                 <img src="images/syaykh.png" alt="Guru dan Tenaga Ahli Perkapalan">
                 <div class="card-overlay"></div>
@@ -147,7 +153,7 @@
               </div>
             </button>
 
-            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='prestasi.php'">
+            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=prestasi'">
               <div class="card-image">
                 <img src="images/ustad imam.jpeg" alt="Prestasi Perkapalan">
                 <div class="card-overlay"></div>
@@ -159,7 +165,7 @@
               </div>
             </button>
 
-            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='beranda.php'">
+            <button type="button" class="card card-fasilitas fade-in delay-100" onclick="window.location.href='index.php?route=beranda'">
               <div class="card-image">
                 <img src="images/download (2).jpg" alt="Program Unggulan Perkapalan">
                 <div class="card-overlay"></div>
@@ -188,7 +194,7 @@
               <li><a href="#" onclick="showPage('beranda')">Beranda</a></li>
               <li><a href="#profil-section" onclick="scrollToSection('profil-section')">Profil</a></li>
               <li><a href="#fasilitas-section" onclick="scrollToSection('fasilitas-section')">Fasilitas</a></li>
-              <li><a href="halaman_login.php">Laporan Praktikum</a></li>
+              <li><a href="index.php?route=halaman_login">Laporan Praktikum</a></li>
             </ul>
           </div>
           <div class="footer-contact">

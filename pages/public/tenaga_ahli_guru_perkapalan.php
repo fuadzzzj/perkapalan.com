@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +18,7 @@
     <link rel="stylesheet" href="format_css/tenaga_ahli_guru.css">
 </head>
 <body>
-    <?php include "service/navbar.php"; ?>
+    <?php include APP_ROOT . '/service/navbar.php'; ?>
 
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -202,7 +208,7 @@
                 Kami membantu siswa tumbuh menjadi tenaga ahli yang siap menghadapi dunia kerja perkapalan dengan
                 kemampuan teknis, sikap profesional, dan semangat belajar yang tinggi.
             </p>
-            <a class="btn btn-primary" href="halaman_login.php">Daftar / Masuk</a>
+            <a class="btn btn-primary" href="index.php?route=halaman_login">Daftar / Masuk</a>
         </div>
     </section>
 
@@ -215,7 +221,7 @@
             <div>
                 <h4>Navigasi</h4>
                 <ul>
-                    <li><a href="beranda.php">Beranda</a></li>
+                    <li><a href="index.php?route=beranda">Beranda</a></li>
                     <li><a href="#profil">Profil</a></li>
                     <li><a href="#tenaga-ahli">Tenaga Ahli</a></li>
                 </ul>

@@ -1,8 +1,13 @@
 <?php
-require __DIR__ . '/service/database.php';
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+
+require APP_ROOT . '/service/database.php';
 session_start();
 if (empty($_SESSION['is_login']) || ($_SESSION['role'] ?? '') !== 'guru') {
-    header('Location: halaman_login.php'); exit;
+    header('Location: index.php?route=halaman_login'); exit;
 }
 $teacherId = (int) $_SESSION['user_id'];
 $escape = static fn ($value) => htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
@@ -23,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $allowedTypes = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
             $detectedType = (new finfo(FILEINFO_MIME_TYPE))->file($photo['tmp_name']);
             if (!isset($allowedTypes[$detectedType]) || $photo['size'] > 8 * 1024 * 1024) { $message = 'Foto harus JPG, PNG, atau WEBP dan maksimal 8 MB.'; }
-            else { $folder = __DIR__ . '/uploads/jadwal'; if (!is_dir($folder)) mkdir($folder, 0755, true); $stored = bin2hex(random_bytes(12)) . '.' . $allowedTypes[$detectedType]; if (move_uploaded_file($photo['tmp_name'], $folder . '/' . $stored)) $photoPath = 'uploads/jadwal/' . $stored; }
+            else { $folder = APP_ROOT . '/uploads/jadwal'; if (!is_dir($folder)) mkdir($folder, 0755, true); $stored = bin2hex(random_bytes(12)) . '.' . $allowedTypes[$detectedType]; if (move_uploaded_file($photo['tmp_name'], $folder . '/' . $stored)) $photoPath = 'uploads/jadwal/' . $stored; }
         }
         if ($message === '') { $stmt = $db->prepare('INSERT INTO jadwal_praktikum (mata_pelajaran, tanggal, jam, ruang, foto_path, dibuat_oleh) VALUES (?, ?, ?, ?, ?, ?)'); $stmt->bind_param('sssssi', $subject, $date, $time, $room, $photoPath, $teacherId); $stmt->execute(); $stmt->close(); $message = 'Jadwal berhasil ditambahkan.'; }
     } elseif ($action === 'pengumuman') {
@@ -37,7 +42,7 @@ $recentSchedules = $db->query('SELECT mata_pelajaran, tanggal, jam, ruang, foto_
 $recentAnnouncements = $db->query('SELECT judul, isi, created_at FROM pengumuman ORDER BY created_at DESC LIMIT 5');
 ?>
 <!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panel Guru | Perkapalan</title><link rel="stylesheet" href="format_css/admin.css"></head><body>
-<header class="topbar"><div><span class="eyebrow">Portal Pengajar</span><h1>Ruang kendali akademik</h1></div><div class="actions"><a class="button" href="chat.php">Ruang chat</a><a class="button danger" href="dashboard.php">Kembali</a></div></header>
+<header class="topbar"><div><span class="eyebrow">Portal Pengajar</span><h1>Ruang kendali akademik</h1></div><div class="actions"><a class="button" href="index.php?route=chat">Ruang chat</a><a class="button danger" href="index.php?route=dashboard">Kembali</a></div></header>
 <main class="page"><?php if ($message): ?><div class="notice"><?php echo $escape($message); ?></div><?php endif; ?>
 <section class="stats"><div><b><?php echo $students->num_rows; ?></b><span>Pelajar terdaftar</span></div><div><b><?php echo $reports->num_rows; ?></b><span>Laporan masuk</span></div><div><b><?php echo $recentSchedules->num_rows; ?></b><span>Jadwal aktif</span></div></section>
 <div class="columns"><section class="panel"><div class="panel-title"><h2>Masukkan nilai</h2><span>Nilai akan langsung masuk ke dashboard pelajar.</span></div><form method="post" class="form"><input type="hidden" name="action" value="nilai"><label>Pelajar<select name="user_id" required><?php while($student=$students->fetch_assoc()): ?><option value="<?php echo (int)$student['id']; ?>"><?php echo $escape($student['nama_lengkap'].' · '.$student['kelas'].' · '.$student['nis']); ?></option><?php endwhile; ?></select></label><label>Mata pelajaran<input name="mata_pelajaran" placeholder="Contoh: Mesin Kapal" required></label><label>Nilai<input name="nilai" type="number" min="0" max="100" step="0.01" required></label><button class="button" type="submit">Simpan nilai</button></form></section>

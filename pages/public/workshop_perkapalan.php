@@ -1,3 +1,9 @@
+<?php
+if (!defined('APP_ROOT')) {
+    http_response_code(404);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,7 +16,7 @@
 </head>
 <body>
 
-<?php include "service/navbar.php"; ?>
+<?php include APP_ROOT . '/service/navbar.php'; ?>
 
 <!-- HERO -->
 <section class="hero" id="beranda">
